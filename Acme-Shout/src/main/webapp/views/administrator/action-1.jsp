@@ -23,15 +23,15 @@
 		<th><spring:message code="administrator.value" /></th>
 	</tr>
 	<tr>
-		<td><spring:message code=administrator.count.all.shouts" /></td>
+		<td><spring:message code="administrator.count.all.shouts" /></td>
 		<td><jstl:out value="${statistics.get('count.all.shouts)}" /></td>
 	</tr>
 	<tr>
-		<td><spring:message code=administrator.count.short.shouts" /></td>
+		<td><spring:message code="administrator.count.short.shouts" /></td>
 		<td><jstl:out value="${statistics.get('count.short.shouts)}" /></td>
 	</tr>
 	<tr>
-		<td><spring:message code=administrator.count.long.shouts" /></td>
+		<td><spring:message code="administrator.count.long.shouts" /></td>
 		<td><jstl:out value="${statistics.get('count.long.shouts)}" /></td>
 	</tr>
 </table>

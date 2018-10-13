@@ -57,6 +57,12 @@
 		</property>
 	</bean>
 	
-	<!-- Other domain beans come here -->	
+	<!-- Other domain beans come here -->
+	
+	<bean id="shout1" class="domain.Shout">
+		<property name="username" value="Paco" />
+		<property name="link" value="http://www.google.com" />
+		<property name="text" value="mira esta web que acaba de salir, mola mucho xdxd"/>
+	</bean>	
 	
 </beans>

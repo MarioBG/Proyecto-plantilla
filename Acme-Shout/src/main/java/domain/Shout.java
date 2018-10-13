@@ -4,6 +4,7 @@ package domain;
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
@@ -15,6 +16,7 @@ public class Shout extends DomainEntity {
 
 
 	@NotBlank
+	@SafeHtml
 	public String getUsername() {
 		return this.username;
 	}
@@ -24,6 +26,7 @@ public class Shout extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@SafeHtml
 	public String getLink() {
 		return this.link;
 	}
@@ -32,6 +35,7 @@ public class Shout extends DomainEntity {
 	}
 
 	@NotBlank
+	@SafeHtml
 	public String getText() {
 		return this.text;
 	}

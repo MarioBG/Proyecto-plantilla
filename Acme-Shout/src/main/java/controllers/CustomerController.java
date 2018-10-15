@@ -48,7 +48,7 @@ public class CustomerController extends AbstractController {
 		shouts = this.shoutService.findAll();
 
 		result = new ModelAndView("customer/action-1");
-		result.addObject("Shouts", shouts);
+		result.addObject("shouts", shouts);
 
 		return result;
 	}

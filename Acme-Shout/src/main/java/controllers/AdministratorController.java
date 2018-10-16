@@ -36,13 +36,13 @@ public class AdministratorController extends AbstractController {
 
 	// Action-1 ---------------------------------------------------------------		
 
-	@RequestMapping(value = "/action-1", method = RequestMethod.GET)
+	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public ModelAndView action1() {
 		ModelAndView result;
 		Map<String, Double> statistics;
 		statistics = this.shoutService.computeStatistics();
 
-		result = new ModelAndView("administrator/action-1");
+		result = new ModelAndView("administrator/dashboard");
 		result.addObject("statistics", statistics);
 
 		return result;
@@ -50,11 +50,11 @@ public class AdministratorController extends AbstractController {
 
 	// Action-2 ---------------------------------------------------------------
 
-	@RequestMapping("/action-2")
+	@RequestMapping("/graphics")
 	public ModelAndView action2() {
 		ModelAndView result;
 
-		result = new ModelAndView("administrator/action-2");
+		result = new ModelAndView("administrator/graphics");
 
 		return result;
 	}

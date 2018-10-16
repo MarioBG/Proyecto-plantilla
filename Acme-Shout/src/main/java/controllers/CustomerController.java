@@ -40,43 +40,43 @@ public class CustomerController extends AbstractController {
 
 	// Action-1 ---------------------------------------------------------------		
 
-	@RequestMapping(value = "/action-1", method = RequestMethod.GET)
+	@RequestMapping(value = "/shouts-list", method = RequestMethod.GET)
 	public ModelAndView action1() {
 		ModelAndView result;
 		Collection<Shout> shouts;
 
 		shouts = this.shoutService.findAll();
 
-		result = new ModelAndView("customer/action-1");
-		result.addObject("Shouts", shouts);
+		result = new ModelAndView("customer/shouts-list");
+		result.addObject("shouts", shouts);
 
 		return result;
 	}
 
 	// Action-2 ---------------------------------------------------------------		
 
-	@RequestMapping(value = "/action-2", method = RequestMethod.GET)
+	@RequestMapping(value = "/create-shout", method = RequestMethod.GET)
 	public ModelAndView action2Get() {
 		ModelAndView result;
 		Shout shout;
 
 		shout = this.shoutService.create();
 
-		result = new ModelAndView("customer/action-2");
+		result = new ModelAndView("customer/create-shout");
 		result.addObject("shout", shout);
 
 		return result;
 	}
 
-	@RequestMapping(value = "/action-2", method = RequestMethod.POST)
+	@RequestMapping(value = "/create-shout", method = RequestMethod.POST)
 	public ModelAndView action2Post(@Valid final Shout shout, final BindingResult binding) {
 		ModelAndView result;
 
 		if (!binding.hasErrors()) {
 			this.shoutService.save(shout);
-			result = new ModelAndView("redirect:action-1.do");
+			result = new ModelAndView("redirect:shouts-list.do");
 		} else {
-			result = new ModelAndView("customer/action-2");
+			result = new ModelAndView("customer/create-shout");
 			result.addObject("shout", shout);
 		}
 

@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import security.UserAccount;
 import domain.Shout;
 
 @Service
+@Transactional
 public class ShoutService {
 
 	@Autowired
@@ -29,9 +32,9 @@ public class ShoutService {
 		countLong = this.shoutRepository.countLongShouts();
 
 		result = new HashMap<String, Double>();
-		result.put("count.all.shouts", countAll);
-		result.put("count.short.shouts", countShort);
-		result.put("count.long.shouts", countLong);
+		result.put("count-all-shouts", countAll);
+		result.put("count-short-shouts", countShort);
+		result.put("count-long-shouts", countLong);
 
 		return result;
 	}
@@ -40,6 +43,9 @@ public class ShoutService {
 		Collection<Shout> result;
 
 		result = this.shoutRepository.findAll();
+
+		for (final Shout s : result)
+			System.out.println(s.getText());
 
 		return result;
 	}

@@ -32,9 +32,9 @@ public class ShoutService {
 		countLong = this.shoutRepository.countLongShouts();
 
 		result = new HashMap<String, Double>();
-		result.put("count.all.shouts", countAll);
-		result.put("count.short.shouts", countShort);
-		result.put("count.long.shouts", countLong);
+		result.put("count-all-shouts", countAll);
+		result.put("count-short-shouts", countShort);
+		result.put("count-long-shouts", countLong);
 
 		return result;
 	}

@@ -16,4 +16,34 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<p><spring:message code="administrator.action.2" /></p>
+<script src="scripts/Chart.bundle.js"></script>
+
+	<spring:message code="administrator.indicator" var="indicatorText"/>
+	<spring:message code="administrator.count.all.shouts" var="allShoutsText"/>
+	<spring:message code="administrator.count.short.shouts" var="shortShoutsText"/>
+	<spring:message code="administrator.count.long.shouts" var="longShoutsText"/>
+	<spring:message code="administrator.shouts" var="shoutsText"/>
+	
+	
+
+	<div id="container" style="width: 75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+	var canvas = $("#canvas");
+	var barChart = new Chart(canvas, {
+		  type: 'bar',
+		  data: {
+		    labels: ["${allShoutsText}", "${shortShoutsText}", "${longShoutsText}"],
+		    datasets: [{
+		      label: "${shoutsText}",
+		      data: ["${statistics['count-all-shouts']}", "${statistics['count-short-shouts']}", "${statistics['count-long-shouts']}", 1, 1],
+		      backgroundColor: [
+		        'rgba(255, 99, 132, 0.6)',
+		        'rgba(54, 162, 235, 0.6)',
+		        'rgba(255, 206, 86, 0.6)'
+		      ]
+		    }]
+		  }
+		});
+	</script>

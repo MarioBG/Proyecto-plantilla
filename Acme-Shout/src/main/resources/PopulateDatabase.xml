@@ -83,4 +83,10 @@
 		<property name="text" value="End tampom tax now!" />
 	</bean>
 	
+	<bean id="shout5" class="domain.Shout">
+		<property name="username" value="Jane Doe" />
+		<property name="link" value="http://www.change.org/p/george-Osborne..." />
+		<property name="text" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur libero et auctor pharetra. Mauris eu nulla eget mauris iaculis scelerisque vitae sit amet diam. Aenean vestibulum augue tortor, quis lacinia leo cursus eget." />
+	</bean>
+	
 </beans>

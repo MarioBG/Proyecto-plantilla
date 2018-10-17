@@ -56,7 +56,7 @@ public class AdministratorController extends AbstractController {
 		Map<String, Double> statistics;
 		statistics = this.shoutService.computeStatistics();
 
-		result = new ModelAndView("administrator/action-2");
+		result = new ModelAndView("administrator/graphics");
 		result.addObject("statistics", statistics);
 
 		return result;

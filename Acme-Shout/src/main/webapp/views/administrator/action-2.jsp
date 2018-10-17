@@ -37,7 +37,7 @@
 		    labels: ["${allShoutsText}", "${shortShoutsText}", "${longShoutsText}"],
 		    datasets: [{
 		      label: "${shoutsText}",
-		      data: ["${statistics['count-all-shouts']}", "${statistics['count-short-shouts']}", "${statistics['count-long-shouts']}", 1, 1],
+		      data: ["${statistics['count-all-shouts']}", "${statistics['count-short-shouts']}", "${statistics['count-long-shouts']}", 1, 1, 1],
 		      backgroundColor: [
 		        'rgba(255, 99, 132, 0.6)',
 		        'rgba(54, 162, 235, 0.6)',
